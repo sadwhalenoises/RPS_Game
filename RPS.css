@@ -1,0 +1,15 @@
+.Title {
+    display: flex;
+    justify-content: center;
+    font-size: 5em;
+}
+
+#showDown { 
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#Robot{
+    height: 30em;
+}
