@@ -1,15 +1,53 @@
+@font-face {
+    font-family: myFont;
+    src: url(/home/purppirate/odinProjects/fonts/ShadowsIntoLightTwo-Regular.ttf);
+}
+
+body{
+    background-color: grey;
+    font-family: myFont;
+}
 .Title {
     display: flex;
     justify-content: center;
     font-size: 5em;
 }
 
-#showDown { 
+.showDown { 
     display: flex;
-    justify-content: space-evenly;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.RPS_icons{
+    display: flex;
+    justify-content: space-around;
+    flex: 3 0 0;
+    padding-left: 15em;
+}
+
+.icons{
+    height:100px;
+    width: 100px;
+    border: 5px solid black;
+}
+
+.icons:hover{
+    height:105px;
+    width: 105px;
+    border: 5px solid white;
+
 }
 
 #Robot{
     height: 30em;
+    width: 480px
 }
+
+.status{
+    display: flex;
+    justify-content: center;
+
+}
+
+
