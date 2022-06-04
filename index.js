@@ -1,30 +1,5 @@
-
-/*
-let getChoice = () => {
-    let playerChoice = prompt("Pick either Rock, Paper, or Scissors");
-    if (playerChoice != "Rock" || "Paper" || "Scissors"){
-        alert("Please Enter either Rock, Paper, or Scissors");
-        getChoice();
-    }
-    console.log(playerChoice);
-    return playerChoice;
-};
-getChoice();
-
-let computerChoice = () =>{
-    let choice = [1,2,3];
-    return choice[Math.floor((Math.random() * 2))];
-}
-
-function Outcome(player, computer) {
-    
-}
-
-*/
-
-let humanScore = document.getElementById("humanScore");
-let ComputerScore = document.getElementById("computerScore");
-let textOutput = document.getElementsByClassName("status");
+let humanScore = 0;
+let ComputerScore = 0;
 let computer = [
     "rock",
     "paper",
@@ -49,55 +24,84 @@ let lost = [
 
 ]
 
+
 function rockSelection(){
-    computerChoice = computer[computerRandom()];
+    
+    computerChoice = computerRandom();
     if(computerChoice === "scissors"){
-        humanScore.innerHTML += 1;
-        textOutput.innerHTML = win[winRandom()]
+        humanScore++;
+        document.getElementById("humanScore").innerHTML = humanScore;
+        document.getElementById("textOutput").innerHTML = winRandom();
     } else if(computerChoice === "paper"){
-        computerChoice.innerHTML += 1;
-        textOutput.innerHTML = lost[lostRandom()]
+        ComputerScore++;
+        document.getElementById("computerScore").innerHTML = ComputerScore;
+        document.getElementById("textOutput").innerHTML = lostRandom();
     }else{
-        textOutput.innerHTML = "Draw!"
+        document.getElementById("textOutput").innerHTML = "Draw!";
     }
+    checkForWinner();
+    console.log(ComputerScore);
+    console.log(humanScore);
 }
 
 function paperSelection(){
-    computerChoice = computer[computerRandom()];
+    computerChoice = computerRandom();
     if(computerChoice === "rock"){
-        humanScore.innerHTML += 1;
-        textOutput.innerHTML = win[winRandom()]
+        humanScore++;
+        document.getElementById("humanScore").innerHTML = humanScore;
+        document.getElementById("textOutput").innerHTML = winRandom();
     } else if(computerChoice === "scissors"){
-        computerChoice.innerHTML += 1;
-        textOutput.innerHTML = lost[lostRandom()]
+        ComputerScore++
+        document.getElementById("computerScore").innerHTML = ComputerScore;
+        document.getElementById("textOutput").innerHTML = lostRandom();
     }else{
-        textOutput.innerHTML = "Draw!"
+        document.getElementById("textOutput").innerHTML = "Draw!"
     }
+    checkForWinner();
 }
 
 function scissorsSelection(){
-    computerChoice = computer[computerRandom()];
+    computerChoice = computerRandom();
     if(computerChoice === "paper"){
-        humanScore.innerHTML += 1;
-        textOutput.innerHTML = win[winRandom()]
+        humanScore++;
+        document.getElementById("humanScore").innerHTML = humanScore;
+        document.getElementById("textOutput").innerHTML = winRandom();
     } else if(computerChoice === "rock"){
-        computerChoice.innerHTML += 1;
-        textOutput.innerHTML = lost[lostRandom()]
+        ComputerScore++
+        document.getElementById("computerScore").innerHTML = ComputerScore;
+        document.getElementById("textOutput").innerHTML = lostRandom();
     }else{
-        textOutput.innerHTML = "Draw!"
+        document.getElementById("textOutput").innerHTML = "Draw!"
     }
+    checkForWinner();
 }
 
 function computerRandom(){
-    return computer[Math.floor((Math.random() * 2))];
+    return computer[Math.floor((Math.random() * 3))];
 }
 
 function winRandom(){
-    return win[Math.floor((Math.random() * 6) + 1 )];
+    return win[Math.floor((Math.random() * 6))];
 }
 
 function lostRandom(){
-    return lost[Math.floor((Math.random() * 5) + 1 )];
+    return lost[Math.floor((Math.random() * 5))];
+}
+
+function checkForWinner(){
+    if(humanScore >= 5){
+        humanScore = 0;
+        ComputerScore = 0;
+        document.getElementById("humanScore").innerHTML = humanScore;
+        document.getElementById("computerScore").innerHTML = ComputerScore;
+        window.alert("You win! Click Ok to play again.");
+    }else if(ComputerScore >= 5){
+        humanScore = 0;
+        ComputerScore = 0;
+        document.getElementById("humanScore").innerHTML = humanScore;
+        document.getElementById("computerScore").innerHTML = ComputerScore;
+        window.alert("You lose! Click Ok to try again.");
+    }
 }
 
 
