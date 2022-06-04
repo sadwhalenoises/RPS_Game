@@ -1,11 +1,7 @@
-@font-face {
-    font-family: myFont;
-    src: url(/home/purppirate/odinProjects/fonts/ShadowsIntoLightTwo-Regular.ttf);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Shadows+Into+Light+Two&display=swap');
 body{
     background-color: grey;
-    font-family: myFont;
+    font-family: 'Shadows Into Light Two', cursive;
 }
 .Title {
     display: flex;
@@ -23,7 +19,7 @@ body{
     display: flex;
     justify-content: space-around;
     flex: 3 0 0;
-    padding-left: 15em;
+    padding-left: 13em;
 }
 
 .icons{
@@ -44,9 +40,37 @@ body{
     width: 480px
 }
 
+#humanScore, #computerScore{
+    font-size: 5em;
+    padding-left: 40px;
+}
+
+#status{
+    display: inline-block;
+    font-size: 2em;
+    white-space: nowrap;
+    position: relative;
+    z-index: auto;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.paper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .status{
     display: flex;
     justify-content: center;
+    position: relative;
+    bottom: 150px;
+    font-size: 2em;
 
 }
 
