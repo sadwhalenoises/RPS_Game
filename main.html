@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="RPS.css">
+    <script src="index.js"></script>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Tangerine">
     <meta charset="UTF-8">
@@ -17,21 +18,21 @@
         <img src="imgs/Human.png" id="Human">
         <div class="RPS_icons">
             <div class="score">
-                <img src="imgs/rock.png" class="icons">
+                <img src="imgs/rock.png" class="icons" id="rock" onclick="rockSelection()">
                 <p id="humanScore">0</p>
             </div>
             
-                <img src="imgs/Paper.png" class="icons">
+                <img src="imgs/Paper.png" class="icons" id="paper">
                
             <div class="score">
-                <img src="imgs/Scissors.png" class="icons">
+                <img src="imgs/Scissors.png" class="icons" id="scissors">
                 <p id="computerScore">0</p>
             </div>
         </div>
         <img src="imgs/Robot.png" id="Robot">
     </div>
   <div class="status">
-        <p>adsadadasdads</p>
+        <p>Looks like the Robot wins this round!</p>
     </div> 
 </body>
 </html>
